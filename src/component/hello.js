@@ -1,6 +1,9 @@
 import React from 'react'
 import { Component } from 'react'
+
 import '../styles/Hello.css'
+
+import Common from './Common'
 
 class Hello extends Component {
   constructor() {
@@ -10,14 +13,11 @@ class Hello extends Component {
   }
 
   render() {
-    setTimeout(() => {
-      this.a += ' change'
-      console.log(this.a)
-    }, 3000)
 
     return (
       <div>
         <span>Hello World change</span>
+        <Common />
       </div>
     )
   }

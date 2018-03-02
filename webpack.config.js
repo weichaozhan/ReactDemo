@@ -9,7 +9,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const webpackConfig = {
   entry: {
     //webpack-hot-middleware/client?reload=true 必填，实现刷新浏览器
-    bundle: ['./src/index.js', 'webpack-hot-middleware/client?noInfo=true&reload=true']
+    index: ['./src/index.js', 'webpack-hot-middleware/client?noInfo=true&reload=true']
   },
   module: {
     rules: [
@@ -25,10 +25,7 @@ const webpackConfig = {
           loader: 'style-loader'
         },
         {
-          loader: 'css-loader',
-          options: {
-            modules: true
-          }
+          loader: 'css-loader'
         }
       ]},
       { test: /\.(png|svg|jpg|gif)$/, use: ['file-loader'] },
@@ -41,12 +38,15 @@ const webpackConfig = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common' // 指定公共 bundle 的名称。
+    })
     // new UglifyJSPlugin()
   ],
   output: {
+    filename: '[name].js',
     //__dirname是node.js中的一个全局变量，它指向当前执行脚本所在的目录
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
   }
 }
 
