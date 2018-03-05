@@ -16,7 +16,7 @@ class Hello extends React.Component {
     return (
       <div>
         <span>Hello World change</span>
-        <Common />
+        <Common testProps="testProps from Hello" />
       </div>
     )
   }

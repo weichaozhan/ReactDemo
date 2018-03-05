@@ -9,7 +9,12 @@ class Common extends React.Component {
 
   render() {
     return (
-      <div className="commen__text">Commen Component</div>
+      <div className="commen__text">
+        Commen Component
+        <h1>
+          <i>{this.props.testProps || 'testProps Normal'}</i>
+        </h1>
+      </div>
     )
   }
 }
