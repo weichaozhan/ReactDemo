@@ -1,9 +1,8 @@
 import React from 'react'
-import { Component } from 'react'
 
 import '../styles/Common.css'
 
-class Common extends Component {
+class Common extends React.Component {
   constructor() {
     super()
   }

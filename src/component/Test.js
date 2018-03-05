@@ -1,12 +1,11 @@
 import React from 'react'
-import { Component } from 'react'
 import cNames from 'classnames'
 
 import '../styles/Test.css'
 
 import Common from './Common'
 
-class Hello extends Component {
+class Hello extends React.Component {
   constructor() {
     super()
 

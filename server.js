@@ -4,6 +4,8 @@ const merge = require('webpack-merge');
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require("webpack-hot-middleware")
 
+
+const port = process.env.PORT || 3000
 const app = express()
 const config = merge(require('./webpack.config.js'), {
   devtool: 'eval-source-map'
@@ -19,6 +21,6 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler));
 
 // Serve the files on port 3000.
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3000!\n')
 });

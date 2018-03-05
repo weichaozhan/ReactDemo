@@ -1,11 +1,12 @@
 import React from 'react'
-import { Component } from 'react'
 import cNames from 'classnames'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
+import '../styles/Index.less'
 
 import Router from './Router'
 
-class Index extends Component {
+class Index extends React.Component {
   constructor() {
     super()
   }
@@ -14,18 +15,23 @@ class Index extends Component {
 
     return (
       <div>
-        <ul>
+        <ul className="nav">
           <li>
-            <Link to="/">首页</Link>
+            <NavLink to="/">首页</NavLink>
           </li>
           <li>
-            <Link to="/hello">Hello</Link>
+            <NavLink to="/hello" replace={true}>Hello</NavLink>
           </li>
           <li>
-            <Link to="/test">Test</Link>
+            <NavLink to="/test" replace={true}>Test</NavLink>
+          </li>
+          <li>
+            <NavLink to="/test/1" replace={true}>Test1</NavLink>
           </li>
         </ul>
-        <Router/>
+        <div className="content-show">
+          <Router/>
+        </div>
       </div>
     )
   }
