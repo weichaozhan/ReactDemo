@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import Hello from './component/Hello'
-import Test from './component/Test'
+import Index from './component/Index'
 
 ReactDOM.render(
-  <div>
-    <Hello />
-    <Test />
-  </div>,
+  <BrowserRouter>
+    <Index />
+  </BrowserRouter>,
   document.querySelector('#app')
 );

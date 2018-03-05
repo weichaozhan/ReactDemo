@@ -1,5 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
+import cNames from 'classnames'
 
 import '../styles/Test.css'
 
@@ -27,11 +28,7 @@ class Hello extends Component {
             show: !show
           })
         }}>click</button>
-        {
-          show && (
-            <div>show me</div>
-          )
-        }
+        <div className={cNames('showMe', {'show': show})}>show me</div>
       </div>
     )
   }
