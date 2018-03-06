@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter } from 'react-router-dom'
 
-import Index from './component/Index'
+import App from './App.js'
 
 ReactDOM.render(
   <HashRouter>
-    <Index />
+    <App />
   </HashRouter>,
   document.querySelector('#app')
 );

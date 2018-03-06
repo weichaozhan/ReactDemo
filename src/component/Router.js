@@ -8,6 +8,7 @@ import Hello from './Hello'
 const Router = () => (
   <div>
     <Switch>
+      <Route exact path="/" component={Test} />
       <Route exact path="/test" component={Test} />
       <Route path="/test/:number" component={TestChild} />
       <Route path="/hello" component={Hello} />

@@ -1,23 +1,21 @@
 import React from 'react'
 import cNames from 'classnames'
+import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 import '../styles/Index.less'
 
-import Router from './Router'
-
 class Index extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
 
   render() {
-
     return (
       <div>
-        <ul className="nav">
+        <ul className={cNames('nav', {'bg-orange': this.props.subData === 'DO_TEST Test action from Hello1'})}>
           <li>
-            <NavLink to="/">首页</NavLink>
+            <NavLink to="/" replace={true}>首页</NavLink>
           </li>
           <li>
             <NavLink to="/hello" replace={true}>Hello</NavLink>
@@ -29,12 +27,17 @@ class Index extends React.Component {
             <NavLink to="/test/1" replace={true}>Test1</NavLink>
           </li>
         </ul>
-        <div className="content-show">
-          <Router/>
-        </div>
       </div>
     )
   }
 }
 
-export default Index
+const mapStateToProps = (state) => {
+  return {
+    subData: state.Base.subData
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(Index)
