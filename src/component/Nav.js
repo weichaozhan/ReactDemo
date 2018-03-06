@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 import '../styles/Index.less'
 
-class Index extends React.Component {
+class Nav extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps
-)(Index)
+)(Nav)

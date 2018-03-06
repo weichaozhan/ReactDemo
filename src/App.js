@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 
 import rootReducer from './store/Index.js'
 import Router from './component/Router'
-import Index from './component/Index'
+import Nav from './component/Nav'
 
 const store = createStore(rootReducer)
 
@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div>
-          <Index />
+          <Nav />
           <div className="content-show">
             <Router/>
           </div>
