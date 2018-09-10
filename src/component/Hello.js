@@ -5,7 +5,7 @@ import '../styles/Hello.css'
 
 import Common from './Common'
 
-import * as baseStore from '../store/Actions/BaseAction.js'
+import * as baseStore from '../store/Actions/BaseAction'
 
 class Hello extends React.Component {
   constructor(props) {
