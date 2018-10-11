@@ -10,16 +10,31 @@ class Hello extends React.Component {
     super()
 
     this.a = 'from hello'
+    this.timer = null
     this.state = {
-      show: false
+      show: false,
+      count: 0
     }
   }
 
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      this.setState({
+        count: ++this.state.count
+      })
+    }, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer)
+  }
+
   render() {
-    const { show } = this.state
+    const { show, count } = this.state
 
     return (
       <div>
+        <div>计数： {count}</div>
         <span className="test__text">Test Text</span>
         <Common />
         <button onClick={() => {
